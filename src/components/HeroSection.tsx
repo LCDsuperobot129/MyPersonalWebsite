@@ -86,7 +86,7 @@ export default function HeroSection() {
         {/* Subtitle */}
         <motion.p 
           variants={itemVariants}
-          className="text-xl sm:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto"
+          className="text-xl sm:text-[22px] text-gray-400 mb-4 max-w-3xl mx-auto"
         >
           14yo website dev, game dev, and a passionate coder
         </motion.p>
@@ -128,8 +128,8 @@ export default function HeroSection() {
           variants={itemVariants}
           className="flex items-center justify-center gap-6"
         >
-          <SocialLink href="https://github.com/yourusername" icon={<Github />} label="GitHub" />
-          <SocialLink href="mailto:your.email@example.com" icon={<Mail />} label="Email" />
+          <SocialLink href="https://github.com/LCDsuperobot129" icon={<Github />} label="GitHub" />
+          <SocialLink href="mailto:ckev2328@gmail.com" icon={<Mail />} label="Email" />
         </motion.div>
       </motion.div>
 

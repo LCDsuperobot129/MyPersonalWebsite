@@ -17,7 +17,7 @@ export default function Home() {
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">
-            Thanks for checking out my own website!
+            Thanks for checking out my website!
           </p>
           <p className="text-gray-500 text-sm mt-2">
             © 2026 Kevin C. All rights reserved.
