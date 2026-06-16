@@ -1,3 +1,3 @@
 # My Personal Portfolio Website
 
-Hey there👋! Check out my [personal website](ckevthedev.vercel.app).
+Hey there👋! Check out my [personal website](https://ckevthedev.vercel.app).

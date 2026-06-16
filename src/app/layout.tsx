@@ -8,15 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Full-Stack Developer & Engineer",
-  description: "Elite software engineer specializing in full-stack development, AI/ML, and award-winning hackathon projects. View my portfolio and experience.",
-  keywords: ["developer", "software engineer", "full-stack", "AI", "ML", "portfolio"],
-  authors: [{ name: "Your Name" }],
-  openGraph: {
-    title: "Your Name | Full-Stack Developer",
-    description: "Elite software engineer portfolio showcasing cutting-edge projects and achievements",
-    type: "website",
-  },
+  title: "Kevin's Portfolio"
 };
 
 export default function RootLayout({
