@@ -1,3 +1,3 @@
-# 🚀 Elite Personal Portfolio Website
+# My Personal Portfolio Website
 
-Hey there! Check out my personal website at ckevthedev.vercel.app
+Hey there! Check out my [personal website](ckevthedev.vercel.app)
