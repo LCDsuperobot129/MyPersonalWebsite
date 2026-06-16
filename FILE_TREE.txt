@@ -1,0 +1,152 @@
+MyPersonalWebsite/
+│
+├── 📂 src/
+│   │
+│   ├── 📂 app/
+│   │   ├── layout.tsx          - Root layout with metadata, fonts, and HTML structure
+│   │   ├── page.tsx            - Main landing page (imports all sections)
+│   │   └── globals.css         - Global styles, Tailwind directives, custom utilities
+│   │
+│   ├── 📂 components/
+│   │   ├── AnimatedBackground.tsx   - Interactive canvas with mouse-tracking grid
+│   │   ├── HeroSection.tsx          - Hero with headline, CTAs, social links
+│   │   ├── ProjectsShowcase.tsx     - Filterable project grid + detailed modals
+│   │   ├── ExperienceTimeline.tsx   - Vertical timeline (work/education/hackathons)
+│   │   └── SkillsGrid.tsx          - Categorized skills display with icons
+│   │
+│   ├── 📂 data/
+│   │   ├── projects.ts         - 6 sample projects with full details
+│   │   ├── experience.ts       - 6 experiences (work/education/hackathons)
+│   │   └── skills.ts           - 6 skill categories, 40+ items
+│   │
+│   ├── 📂 types/
+│   │   └── index.ts            - TypeScript type definitions (Project, Experience, Skill)
+│   │
+│   └── 📂 lib/
+│       └── utils.ts            - Utility functions and animation variants
+│
+├── 📂 public/
+│   ├── projects/               - (Create this) Place project images here
+│   ├── resume.pdf              - (Add this) Your resume PDF
+│   └── .gitkeep                - Ensures directory is tracked by git
+│
+├── 📄 Configuration Files
+│   ├── next.config.js          - Next.js configuration
+│   ├── tailwind.config.ts      - Tailwind theme, colors, animations
+│   ├── tsconfig.json           - TypeScript compiler options and paths
+│   ├── postcss.config.mjs      - PostCSS with Tailwind and Autoprefixer
+│   ├── .eslintrc.json          - ESLint configuration
+│   ├── .gitignore              - Git ignore patterns
+│   └── package.json            - Dependencies and scripts
+│
+├── 📚 Documentation
+│   ├── README.md               - Complete documentation and overview
+│   ├── QUICKSTART.md           - 10-minute quick start guide
+│   ├── CUSTOMIZATION.md        - Deep dive customization guide
+│   ├── ARCHITECTURE.md         - Technical architecture and patterns
+│   ├── DEPLOYMENT.md           - Deploy to Vercel, Netlify, AWS, etc.
+│   ├── PROJECT_SUMMARY.md      - High-level project summary
+│   └── FILE_TREE.txt           - This file
+│
+└── 📂 .git/                    - Git repository (if initialized)
+
+
+════════════════════════════════════════════════════════════════════════════════
+FILE PURPOSES AT A GLANCE
+════════════════════════════════════════════════════════════════════════════════
+
+🎨 COMPONENTS (What Users See)
+────────────────────────────────────────────────────────────────────────────────
+AnimatedBackground.tsx   → Interactive canvas background with mouse tracking
+HeroSection.tsx          → Landing section with headline, CTAs, social links
+ProjectsShowcase.tsx     → Main project portfolio with filtering and modals
+ExperienceTimeline.tsx   → Career timeline (color-coded by type)
+SkillsGrid.tsx          → Tech stack display with categorization
+
+📊 DATA (What You Customize)
+────────────────────────────────────────────────────────────────────────────────
+projects.ts             → Edit your projects here (6 samples included)
+experience.ts           → Edit work/education/hackathons (6 samples included)
+skills.ts               → Edit your tech stack (6 categories included)
+
+🔧 CONFIGURATION (How It Works)
+────────────────────────────────────────────────────────────────────────────────
+tailwind.config.ts      → Colors, animations, theme customization
+next.config.js          → Next.js framework settings
+tsconfig.json           → TypeScript settings and path aliases
+package.json            → Dependencies and npm scripts
+
+📖 DOCUMENTATION (How To Use)
+────────────────────────────────────────────────────────────────────────────────
+README.md               → Start here - complete guide
+QUICKSTART.md           → Get started in 10 minutes
+CUSTOMIZATION.md        → Customize every detail
+ARCHITECTURE.md         → Understand the structure
+DEPLOYMENT.md           → Deploy to production
+PROJECT_SUMMARY.md      → Overview of what's included
+
+
+════════════════════════════════════════════════════════════════════════════════
+QUICK REFERENCE - WHAT TO EDIT
+════════════════════════════════════════════════════════════════════════════════
+
+TO CHANGE YOUR INFO:
+  → src/components/HeroSection.tsx       (Name, title, social links)
+  → src/app/layout.tsx                   (SEO metadata)
+
+TO ADD YOUR CONTENT:
+  → src/data/projects.ts                 (Your projects)
+  → src/data/experience.ts               (Your experience)
+  → src/data/skills.ts                   (Your skills)
+
+TO CUSTOMIZE DESIGN:
+  → tailwind.config.ts                   (Colors, theme)
+  → src/app/globals.css                  (Global styles)
+
+TO ADD ASSETS:
+  → public/resume.pdf                    (Your resume)
+  → public/projects/*.jpg                (Project images)
+
+
+════════════════════════════════════════════════════════════════════════════════
+COMPONENT HIERARCHY
+════════════════════════════════════════════════════════════════════════════════
+
+app/layout.tsx
+  └── app/page.tsx
+      ├── AnimatedBackground
+      ├── HeroSection
+      ├── ProjectsShowcase
+      │   ├── ProjectCard (multiple)
+      │   └── ProjectModal
+      ├── ExperienceTimeline
+      │   └── Experience Cards (multiple)
+      ├── SkillsGrid
+      │   └── Skill Categories (multiple)
+      └── Footer
+
+
+════════════════════════════════════════════════════════════════════════════════
+NPM SCRIPTS
+════════════════════════════════════════════════════════════════════════════════
+
+npm run dev             → Start development server (http://localhost:3000)
+npm run build           → Build for production
+npm start               → Start production server
+npm run lint            → Run ESLint
+
+
+════════════════════════════════════════════════════════════════════════════════
+NEXT STEPS
+════════════════════════════════════════════════════════════════════════════════
+
+1. npm install                          → Install dependencies
+2. Edit src/data/*.ts                   → Add your content
+3. Edit src/components/HeroSection.tsx  → Update personal info
+4. Add public/resume.pdf                → Add your resume
+5. npm run dev                          → Test locally
+6. Push to GitHub                       → Prepare for deploy
+7. Deploy to Vercel                     → Go live!
+
+
+════════════════════════════════════════════════════════════════════════════════
