@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-cal: 'Cal Sans', system-ui, -apple-system, sans-serif;
+    --font-lora: 'Lora', serif;
   }
 
   * {
@@ -18,6 +18,11 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Apply Lora to all headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lora font-semibold;
   }
 }
 

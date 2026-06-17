@@ -34,7 +34,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-cal)", "system-ui", "sans-serif"],
+        display: ["var(--font-lora)", "system-ui", "sans-serif"],
+        lora: ["var(--font-lora)", "serif"],
       },
       animation: {
         "fade-in": "fade-in 0.6s ease-out forwards",

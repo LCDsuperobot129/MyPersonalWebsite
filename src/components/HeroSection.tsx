@@ -75,11 +75,11 @@ export default function HeroSection() {
         {/* Main Headline */}
         <motion.h1 
           variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight pb-2"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-1 leading-tight pb-4 overflow-visible"
         >
-          <span className="block text-white">Hi! I'm Kevin.</span>
-          <span className="block text-gradient from-accent-red via-accent-rose to-accent-orange pb-1">
-            Join my journey
+          <span className="block text-white">hi! i'm kevin.</span>
+          <span className="block text-gradient from-accent-red via-accent-rose to-accent-orange pb-3">
+            join my journey
           </span>
         </motion.h1>
 
