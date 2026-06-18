@@ -13,6 +13,13 @@ export default function AnimatedBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Check if mobile device
+    const isMobile = window.innerWidth < 768;
+    
+    // Reduce complexity on mobile
+    const gridSize = isMobile ? 80 : 50;
+    const maxDistance = isMobile ? 150 : 200;
+
     let animationFrameId: number;
     let mouseX = 0;
     let mouseY = 0;
@@ -32,16 +39,14 @@ export default function AnimatedBackground() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Grid parameters
-    const gridSize = 50;
     let offset = 0;
 
     const draw = () => {
       ctx.fillStyle = "#0a0a0f";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw grid
-      ctx.strokeStyle = "rgba(239, 68, 68, 0.1)";
+      // Draw grid with reduced density on mobile
+      ctx.strokeStyle = "rgba(239, 68, 68, 0.125)";
       ctx.lineWidth = 1;
 
       for (let x = -gridSize; x < canvas.width + gridSize; x += gridSize) {
@@ -49,20 +54,19 @@ export default function AnimatedBackground() {
           const distanceToMouse = Math.sqrt(
             Math.pow(x - mouseX, 2) + Math.pow(y - mouseY, 2)
           );
-          const maxDistance = 200;
           const opacity = Math.max(
             0,
             1 - distanceToMouse / maxDistance
           );
 
-          if (opacity > 0) {
+          if (opacity > 0 && !isMobile) { // Skip dots on mobile
             ctx.strokeStyle = `rgba(239, 68, 68, ${opacity * 0.4})`;
             ctx.beginPath();
             ctx.arc(x, y, 2, 0, Math.PI * 2);
             ctx.fill();
           }
 
-          ctx.strokeStyle = "rgba(239, 68, 68, 0.05)";
+          ctx.strokeStyle = "rgba(239, 68, 68, 0.125)";
           ctx.beginPath();
           ctx.moveTo(x, y);
           ctx.lineTo(x + gridSize, y);
@@ -74,21 +78,23 @@ export default function AnimatedBackground() {
         }
       }
 
-      // Draw glow effect around mouse
-      const gradient = ctx.createRadialGradient(
-        mouseX,
-        mouseY,
-        0,
-        mouseX,
-        mouseY,
-        300
-      );
-      gradient.addColorStop(0, "rgba(239, 68, 68, 0.15)");
-      gradient.addColorStop(0.5, "rgba(239, 68, 68, 0.05)");
-      gradient.addColorStop(1, "rgba(239, 68, 68, 0)");
+      // Draw glow effect around mouse (lighter on mobile)
+      if (!isMobile) {
+        const gradient = ctx.createRadialGradient(
+          mouseX,
+          mouseY,
+          0,
+          mouseX,
+          mouseY,
+          300
+        );
+        gradient.addColorStop(0, "rgba(239, 68, 68, 0.15)");
+        gradient.addColorStop(0.5, "rgba(239, 68, 68, 0.05)");
+        gradient.addColorStop(1, "rgba(239, 68, 68, 0)");
 
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
 
       offset += 0.5;
       animationFrameId = requestAnimationFrame(draw);
