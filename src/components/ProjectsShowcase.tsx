@@ -102,7 +102,7 @@ function ProjectCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className="group relative bg-surface/80 backdrop-blur-md border border-border rounded-2xl overflow-hidden cursor-pointer hover:border-accent-red/50 transition-[border-color,transform] duration-200 ease-out"
+      className="group relative bg-black border border-border rounded-2xl overflow-hidden cursor-pointer hover:border-accent-red/50 transition-[border-color,transform] duration-200 ease-out"
       style={{ transformStyle: "preserve-3d" }}
     >
       {/* Featured Badge */}
@@ -138,7 +138,7 @@ function ProjectCard({
           </div>
         )}
 
-        <h3 className="text-xl font-bold mb-2 text-white group-hover:text-accent-red transition-colors">
+        <h3 className="text-xl font-bold mb-2 text-white group-hover:text-accent-red transition-colors font-sans">
           {project.title}
         </h3>
         <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
@@ -154,7 +154,7 @@ function ProjectCard({
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 bg-surface-elevated/40 backdrop-blur-sm text-xs font-medium text-gray-300 rounded border border-border"
+              className="px-2 py-1 bg-surface-elevated text-xs font-medium text-gray-300 rounded border border-border"
             >
               {tag}
             </span>
@@ -216,12 +216,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: "spring", damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface/80 backdrop-blur-md border border-border rounded-2xl shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black border border-border rounded-2xl shadow-2xl"
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="sticky top-4 right-4 float-right z-10 p-2 bg-surface-elevated/40 backdrop-blur-sm border border-border rounded-lg text-gray-400 hover:text-white hover:border-accent-red transition-colors"
+          className="sticky top-4 right-4 float-right z-10 p-2 bg-surface-elevated border border-border rounded-lg text-gray-400 hover:text-white hover:border-accent-red transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -235,7 +235,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 <span className="font-semibold">{project.achievement}</span>
               </div>
             )}
-            <h2 className="text-3xl font-bold text-white mb-3">{project.title}</h2>
+            <h2 className="text-3xl font-bold text-white mb-3 font-sans">{project.title}</h2>
             <p className="text-xl text-gray-400 mb-4">{project.longDescription}</p>
 
             {/* Impact */}
@@ -252,7 +252,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 bg-surface-elevated/40 backdrop-blur-sm border border-border text-sm font-medium text-gray-300 rounded-lg"
+                  className="px-3 py-1.5 bg-surface-elevated border border-border text-sm font-medium text-gray-300 rounded-lg font-sans"
                 >
                   {tag}
                 </span>
@@ -317,7 +317,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               className="flex-1"
             >
               <motion.button
-                  className="w-full px-6 py-3 bg-surface-elevated/40 backdrop-blur-sm border border-border rounded-lg font-semibold text-white hover:border-accent-red transition-colors flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3 bg-surface-elevated border border-border rounded-lg font-semibold text-white hover:border-accent-red transition-colors flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

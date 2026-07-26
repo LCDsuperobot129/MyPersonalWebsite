@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: "1",
     company: "Daydream Global: IShowSprint",
-    role: "Sole Game Developer",
+    role: "Game Developer",
     period: "2025",
     type: "hackathon",
     description: "Created an interactive Itch.io game that powers IShowSpeed",

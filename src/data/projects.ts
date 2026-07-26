@@ -29,5 +29,18 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/LCDsuperobot129/IShowSprintRepository",
     impact: "Let players sprint as IShowSpeed by mashing the spacebar",
     featured: true,
+  },
+  {
+    id: "3",
+    title: "TruhFocuser",
+    description: "A fun Chrome-based extension for productivity",
+    longDescription: "",
+    category: ["Full-Stack"],
+    tags: ["HTML", "CSS", "JS"],
+    image: "/truhfocuserbanner.png",
+    liveUrl: "https://lcdsuperobot129.github.io/TruhFocuserHomeWebsite/",
+    githubUrl: "https://github.com/LCDsuperobot129/TruhFocuserHomeWebsite",
+    impact: "Programmed and designed the home website",
+    featured: false,
   }
 ];
