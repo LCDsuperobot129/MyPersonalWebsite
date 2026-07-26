@@ -143,7 +143,7 @@ export default function HeroSection() {
         >
           <Link href="#projects">
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-accent-red to-accent-rose rounded-lg font-semibold text-white shadow-lg relative overflow-hidden group"
+              className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 rounded-lg font-semibold text-white shadow-lg relative overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
