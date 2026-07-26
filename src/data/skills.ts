@@ -4,6 +4,7 @@ export const skills: Skill[] = [
   {
     category: "Languages",
     items: [
+      "C",
       "C++",
       "Python",
       "Lua",

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Nunito, Lora } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const nunito = Nunito({ 
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-nunito",
 });
 
 const lora = Lora({
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${lora.variable} font-sans`}>
+      <body className={`${nunito.variable} ${lora.variable} font-sans`}>
         {children}
       </body>
     </html>

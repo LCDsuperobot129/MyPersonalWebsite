@@ -43,7 +43,7 @@ export default function ExperienceTimeline() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Experience & <span className="text-gradient from-accent-red to-accent-rose">Achievements</span>
+            Experience & <span className="text-gradient from-accent-red to-accent-rose">Education</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             A record of my journey. More things may arrive.
@@ -74,7 +74,7 @@ export default function ExperienceTimeline() {
                 {/* Content Card */}
                 <motion.div
                   whileHover={{ scale: 1.02, x: 4 }}
-                  className="bg-surface border border-border rounded-xl p-6 hover:border-accent-red/50 transition-all"
+                  className="bg-surface/80 backdrop-blur-md border border-border rounded-xl p-6 hover:border-accent-red/50 transition-all"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <h3 className="text-xl font-bold text-white">{exp.role}</h3>

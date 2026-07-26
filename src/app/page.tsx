@@ -1,4 +1,3 @@
-import AnimatedBackground from "@/components/AnimatedBackground";
 import HeroSection from "@/components/HeroSection";
 import ProjectsShowcase from "@/components/ProjectsShowcase";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -7,7 +6,6 @@ import SkillsGrid from "@/components/SkillsGrid";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <AnimatedBackground />
       <HeroSection />
       <ProjectsShowcase />
       <ExperienceTimeline />

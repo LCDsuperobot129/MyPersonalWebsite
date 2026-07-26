@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
+        background: "#000000",
         surface: "#111118",
         "surface-elevated": "#1a1a24",
         border: "#2a2a3a",
@@ -33,7 +33,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-nunito)", "system-ui", "sans-serif"],
         display: ["var(--font-lora)", "system-ui", "sans-serif"],
         lora: ["var(--font-lora)", "serif"],
       },

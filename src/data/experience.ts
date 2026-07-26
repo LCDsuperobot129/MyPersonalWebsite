@@ -23,5 +23,29 @@ export const experiences: Experience[] = [
       "Placed top 250+ out of all Canadian Fryer Contest participants",
       "Placed 2nd in school - significantly contributed to my school's team honour roll ranking (top 35+)"
     ],
+  },
+  {
+    id: "3",
+    company: "Harvard CS50x Intro to Computer Science",
+    role: "Learner",
+    period: "2026 (On-going)",
+    type: "education",
+    description: "Learned various topics such as C, Memory, Data Types, and more",
+    achievements: [
+      "Tackled problem sets based off of the topics learned",
+      "Learned how to use efficient algorithms and logic for competitive programming",
+      "ACE-certified course"
+    ],
+  },
+  {
+    id: "4",
+    company: "Secondary School",
+    role: "Student",
+    period: "2025 - Now (On-going)",
+    type: "education",
+    description: "Enrolled in the IB program (currently Pre-IB for grades 9/10)",
+    achievements: [
+      "Educated on school subjects from the Pre-IB curriculum"
+    ],
   }
 ];

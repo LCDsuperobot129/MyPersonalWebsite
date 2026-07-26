@@ -3,6 +3,39 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText, ArrowDown, Sparkles } from "lucide-react";
 import Link from "next/link";
+import BeamsBackground from "@/components/BeamsBackground";
+import BubbleMenu from "@/components/BubbleMenu";
+
+const navItems = [
+  {
+    label: "home",
+    href: "#home",
+    ariaLabel: "Home",
+    rotation: -8,
+    hoverStyles: { bgColor: "#ef4444", textColor: "#ffffff" },
+  },
+  {
+    label: "projects",
+    href: "#projects",
+    ariaLabel: "Projects",
+    rotation: 8,
+    hoverStyles: { bgColor: "#ef4444", textColor: "#ffffff" },
+  },
+  {
+    label: "experience & education",
+    href: "#experience",
+    ariaLabel: "Experience & Education",
+    rotation: 8,
+    hoverStyles: { bgColor: "#ef4444", textColor: "#ffffff" },
+  },
+  {
+    label: "languages",
+    href: "#skills",
+    ariaLabel: "Languages",
+    rotation: -8,
+    hoverStyles: { bgColor: "#ef4444", textColor: "#ffffff" },
+  },
+];
 
 export default function HeroSection() {
   const containerVariants = {
@@ -30,7 +63,18 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <BeamsBackground />
+      <BubbleMenu
+        items={navItems}
+        menuAriaLabel="Toggle navigation"
+        menuBg="#111118"
+        menuContentColor="#ffffff"
+        useFixedPosition={true}
+        animationEase="back.out(1.5)"
+        animationDuration={0.5}
+        staggerDelay={0.12}
+      />
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -61,17 +105,11 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="relative z-10 max-w-5xl mx-auto text-center"
+        className="relative z-10 max-w-5xl mx-auto text-center mt-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Badge */}
-        <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-accent-red/30 mb-8">
-          <Sparkles className="w-4 h-4 text-accent-red" />
-          <span className="text-sm text-gray-300">Locked in. Or am I?</span>
-        </motion.div>
-
         {/* Main Headline */}
         <motion.h1 
           variants={itemVariants}
@@ -88,7 +126,7 @@ export default function HeroSection() {
           variants={itemVariants}
           className="text-xl sm:text-[22px] text-gray-400 mb-4 max-w-3xl mx-auto"
         >
-          14yo website dev, game dev, and a passionate coder
+          15yo web dev, game dev, valorant enjoyer, and aspiring SWE
         </motion.p>
 
         <motion.p 
@@ -153,7 +191,7 @@ function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="p-3 bg-surface border border-border rounded-lg text-gray-400 hover:text-accent-red hover:border-accent-red transition-colors"
+      className="p-3 bg-surface/40 backdrop-blur-sm border border-border rounded-lg text-gray-400 hover:text-accent-red hover:border-accent-red transition-colors"
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
       aria-label={label}

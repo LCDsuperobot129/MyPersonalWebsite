@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { Github, ExternalLink, X, Award, Zap, Code2 } from "lucide-react";
+import { Github, ExternalLink, X, Award, Zap } from "lucide-react";
 import { Project, ProjectCategory } from "@/types";
 import { projects } from "@/data/projects";
 
@@ -70,16 +70,40 @@ function ProjectCard({
   index: number;
   onClick: () => void;
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  };
+
+  const handleMouseLeave = () => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+  };
+
   return (
     <motion.div
+      ref={cardRef}
       layout
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-      whileHover={{ y: -8 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className="group relative bg-surface border border-border rounded-2xl overflow-hidden cursor-pointer hover:border-accent-red/50 transition-colors"
+      className="group relative bg-surface/80 backdrop-blur-md border border-border rounded-2xl overflow-hidden cursor-pointer hover:border-accent-red/50 transition-[border-color,transform] duration-200 ease-out"
+      style={{ transformStyle: "preserve-3d" }}
     >
       {/* Featured Badge */}
       {project.featured && (
@@ -88,7 +112,7 @@ function ProjectCard({
         </div>
       )}
 
-      {/* Image Placeholder with gradient */}
+      {/* Image */}
       <div className="relative h-48 bg-gradient-to-br from-accent-red/20 via-surface to-accent-rose/20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60" />
         <motion.div
@@ -97,10 +121,11 @@ function ProjectCard({
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.4 }}
         />
-        {/* Icon representation */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Code2 className="w-16 h-16 text-accent-red/30" />
-        </div>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
       </div>
 
       {/* Content */}
@@ -129,7 +154,7 @@ function ProjectCard({
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 bg-surface-elevated text-xs font-medium text-gray-300 rounded border border-border"
+              className="px-2 py-1 bg-surface-elevated/40 backdrop-blur-sm text-xs font-medium text-gray-300 rounded border border-border"
             >
               {tag}
             </span>
@@ -191,12 +216,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: "spring", damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface border border-border rounded-2xl shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface/80 backdrop-blur-md border border-border rounded-2xl shadow-2xl"
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="sticky top-4 right-4 float-right z-10 p-2 bg-surface-elevated border border-border rounded-lg text-gray-400 hover:text-white hover:border-accent-red transition-colors"
+          className="sticky top-4 right-4 float-right z-10 p-2 bg-surface-elevated/40 backdrop-blur-sm border border-border rounded-lg text-gray-400 hover:text-white hover:border-accent-red transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -227,7 +252,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 bg-surface-elevated border border-border text-sm font-medium text-gray-300 rounded-lg"
+                  className="px-3 py-1.5 bg-surface-elevated/40 backdrop-blur-sm border border-border text-sm font-medium text-gray-300 rounded-lg"
                 >
                   {tag}
                 </span>
@@ -292,7 +317,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               className="flex-1"
             >
               <motion.button
-                className="w-full px-6 py-3 bg-surface-elevated border border-border rounded-lg font-semibold text-white hover:border-accent-red transition-colors flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3 bg-surface-elevated/40 backdrop-blur-sm border border-border rounded-lg font-semibold text-white hover:border-accent-red transition-colors flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
