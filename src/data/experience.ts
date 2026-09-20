@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
     role: "Student",
     period: "2025 - Now (On-going)",
     type: "education",
-    description: "Enrolled in the IB program (currently Pre-IB for grades 9/10)",
+    description: "Enrolled in the IB program (currently Pre-IB for grade 10)",
     achievements: [
       "Educated on school subjects from the Pre-IB curriculum"
     ],
