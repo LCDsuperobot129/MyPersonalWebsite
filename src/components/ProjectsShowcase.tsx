@@ -24,7 +24,7 @@ export default function ProjectsShowcase() {
             Featured <span className="text-gradient from-accent-red to-accent-rose">Projects</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            All of my projects that I have worked on or am working on.
+            All of my projects that I have worked on or am working on (IF THE LIVE URL LINK DOES NOT FIND THE PAGE, THEN THAT MEANS I TOOK IT DOWN DUE TO COPYRIGHTED MATERIAL).
           </p>
         </motion.div>
 
