@@ -126,7 +126,7 @@ export default function HeroSection() {
           variants={itemVariants}
           className="text-xl sm:text-[22px] text-gray-400 mb-4 max-w-3xl mx-auto"
         >
-          15yo web dev, game dev, valorant enjoyer, and aspiring SWE
+          15yo web dev, game dev, valorant gamer, and aspiring programmer
         </motion.p>
 
         <motion.p 
